@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/index.css">
+  <title><%= connection.Topic %> - <%= connection.Name %></title>
+</head>
+
+<body>
+  <%- include('./partials/header.ejs') %>
+
+    <h2><%= connection.Topic %> - <%= connection.Name %></h2>
+    <form>
+      <button type = "submit" formmethod = "GET" formaction = "/connections/<%= connection._id%>/edit">UPDATE</button>
+      <button type = "submit" formmethod = "POST" formaction = "/connections/<%= connection._id%>?_method=DELETE">DELETE</button>
+    </form>
+         
+    <p><%= connection.Details %></p>
+    
+    <div class="details_box">
+      <ul class="event_details">
+        <li>Hosted by: <%= connection.Host %></li>
+        <li>Date: <%= connection.Date %></li>
+        <li>Begins at: <%= connection.Start %></li>
+        <li>Ends at: <%= connection.End %></li>
+        <li>Where to go: <%= connection.Location %></li>
+      </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+<%- include('./partials/footer.ejs') %>
+</html>

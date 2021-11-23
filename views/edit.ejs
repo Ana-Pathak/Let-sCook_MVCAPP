@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/index.css">
+</head>
+
+<body>
+  <%- include('./partials/header.ejs'); -%>
+  <form method = "POST" action ="/connections/<%=connection._id%>?_method=PUT">
+    <table>
+        <tr>
+            <td><label for="name" >Name</label></td>
+            <td><input type="text" id="name" name="Name" value = "<%= connection.Name%>" class = "fixed-width"></td>
+        </tr>
+        <tr>
+          <td><label for="topic" >Topic</label></td>
+          <td><input type="text" id="topic" name="Topic" value = "<%= connection.Topic%>" class = "fixed-width"></td>
+        </tr>
+        <tr><td class = "align-top"><label for="Details">Details</label></td>
+            <td><textarea rows="4" cols="50" id="details" name="Details" class = "fixed-width"><%= connection.Details%></textarea></td>
+        </tr>
+        <tr>
+          <td><label for="startTime" >Start Time</label></td>
+          <td><input type="text" id="startTime" name="Start" value = "<%= connection.Start%>" class = "fixed-width"></td>
+        </tr>
+        <tr>
+          <td><label for="endTime" >End Time</label></td>
+          <td><input type="text" id="endTime" name="End" value = "<%= connection.End%>" class = "fixed-width"></td>
+        </tr>
+        <tr>
+          <td><label for="location" >Location</label></td>
+          <td><input type="text" id="location" name="Location" value = "<%= connection.Location%>" class = "fixed-width"></td>
+        </tr>
+        <tr>
+          <td><label for="host" >Host</label></td>
+          <td><input type="text" id="host" name="Host" value = "<%= connection.Host%>" class = "fixed-width"></td>
+        </tr>
+        <tr>
+            <td colspan="2" class = "align-right"><button>Submit</button></td>
+        </tr>
+        </table>        
+</form>
+    <%- include('./partials/footer.ejs'); -%>
+  </body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/index.css">
+  <title>Connections</title>
+</head>
+
+<body>
+  <%- include ('./partials/header.ejs') %>
+
+    <% for(let i = 0; i < topic.length; i++){ %>
+      <ul class="links_list"></ul>
+      <h1><%= topic[i] %></h1>
+          <%connections.forEach(connection=> {%>
+        <%if(connection.Topic == topic[i]){%>
+            <a href = "/connections/<%=connection._id%>"><%=connection.Name%></a>  
+      <%}}) %>
+    </ul>
+    <% } %>
+  <%- include ('./partials/footer.ejs') %>
+</body>
+
+</html>

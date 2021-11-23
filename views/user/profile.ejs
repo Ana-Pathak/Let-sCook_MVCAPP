@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/index.css">
+  <title>Connections</title>
+</head>
+
+<body>
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <h2>Welcome, <%=user.firstName%></h2>
+    </div>
+
+    <% if (connections.length) { %>
+      <p>Here are your connections:</p>
+      <form>
+          <table>
+          <%connections.forEach(connection => {%>
+              <tr>
+                  <th><a href="/connections/<%=connection._id%>"><%=connection.Name%></a></th>
+                  <td><button id="update" type="submit" formmethod="GET" formaction = "/connections/<%=connection._id%>/edit">Edit</button></td>
+                  <td><button id="delete" type="submit" formmethod="POST" formaction = "/connections/<%=connection._id%>?_method=DELETE">Delete</button></td>
+              </tr>
+          <% }); %>
+          </table>
+      </form>
+  <% } else { %>
+      <p>You do not have any connections.</p>
+  <%}%>
+
+    <%- include('../partials/footer.ejs')%>
+
+</body>
+</html>

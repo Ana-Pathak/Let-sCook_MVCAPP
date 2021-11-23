@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/index.css">
+</head>
+
+<body>
+    <%- include('./partials/header.ejs'); -%>
+<main>
+    <!--Setting up the form-->
+    <form action='/connections' name = "form" id = "form" method="POST">
+        <fieldset>
+            <!--Topic -->
+            <div>
+            <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="Topic">
+            </div>
+            <!--Name -->
+            <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="Name">
+            </div>
+            <!--Host -->
+            <div>
+            <label for="host">Host:</label>
+            <input type="text" id="host" name="Host">
+            </div>
+            <!--Details-->
+            <div>
+            <label id = "details">Details:</label>
+ 		    <textarea name="Details" id="detail" rows="4" cols="50"></textarea>
+             </div>
+            <!--Where -->
+            <div>
+            <label for="where">Where:</label>
+            <input type="text" id="where" name="Location">
+            </div>
+           <!--When -->
+           <div>
+		    <label>When:</label>
+ 		    <input type ="date" name="Date" id="Date">
+			</div>
+            <!--Start -->
+           <div>
+		    <label>Start:</label>
+ 		    <input type ="time" name="Start" id="dateStart">
+			</div>
+            <!--End -->
+           <div>
+		    <label>End:</label>
+ 		    <input type ="time" name="End" id="dateEnd">
+			</div>
+        </fieldset>
+        <!--Submit button -->
+        <input type ="submit" value ="Create Connection">
+        </form>
+        <!--end of form-->
+</main>
+    <%- include('./partials/footer.ejs'); -%>
+</body>
+
+</html>

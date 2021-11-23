@@ -1,0 +1,43 @@
+<header>
+    <div style="text-align: left">
+        <a href="/">
+            <img alt="logo" src="/public/images/logo.png"
+            width="200" height="100">
+         </a>
+    </div>
+    
+    <div class="GeneralNavigation">
+        <a href="/connections">Connections</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+    <% if(user) { %>
+    <a href="/connections/new">Start a New Connection</a>
+    <% } %>
+    <% if(!user) { %>
+          <a id="login" href="/users/login">Log in</a>
+          <a id="signup" href="/users/new">Sign up</a>
+  <% } else { %>
+          <a id="profile" href="/users/profile">Welcome, <%=user.firstName%>!</a>
+          <a id="logout" href="/users/logout">Logout</a>
+  <% } %>
+  </div>
+
+
+<div id="flash-container">
+  <% if(errorMessages.length > 0) {%>
+    <% errorMessages.forEach(message=>{%>
+        <div class='flash error'>
+            <%=message%>
+        </div>
+        <%});%>
+            <%}%>
+  <% if(successMessages.length > 0) {%>
+      <% successMessages.forEach(message=>{%>
+          <div class='flash success'>
+              <%=message%>
+          </div>
+          <%});%>
+              <%}%>
+        </div>
+</header>
+
